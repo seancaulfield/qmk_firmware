@@ -98,6 +98,3 @@
 
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define RGB_MATRIX_KEYPRESSES
-
-// Use capslock key LED to display caps lock status
-#define BACKLIGHT_CAPS_LOCK
