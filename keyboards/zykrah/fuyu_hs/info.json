@@ -24,7 +24,11 @@
         "cols": ["GP29", "GP28", "GP27", "GP26", "GP25", "GP24", "GP23", "GP22", "GP21", "GP20", "GP19", "GP18", "GP17", "GP16", "GP2", "GP1", "GP0"]
     },
     "rgb_matrix": {
-        "driver": "WS2812"
+        "driver": "ws2812"
+    },
+    "ws2812": {
+        "pin": "GP3",
+        "driver": "vendor"
     },
     "url": "https://github.com/zykrah/fuyu",
     "layouts": {
