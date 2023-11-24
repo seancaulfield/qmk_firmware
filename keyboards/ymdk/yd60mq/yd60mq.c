@@ -1,5 +1,13 @@
 #include "quantum.h"
 
+// How long (in milliseconds) to wait between animation steps for each of the
+// "Cycling rainbow" animations
+const uint8_t RGBLED_RAINBOW_MOOD_INTERVALS[] PROGMEM = { 255, 127, 32 };
+
+// How long (in milliseconds) to wait between animation steps for each of the
+// "Swirling rainbow" animations
+//const uint8_t RGBLED_RAINBOW_SWIRL_INTERVALS[] PROGMEM = {100, 50, 20};
+
 __attribute__((weak))
 void matrix_init_kb(void){
     setPinOutput(F4);
