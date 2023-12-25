@@ -102,6 +102,7 @@ bool rgb_matrix_indicators_user(void) {
 
 #endif
 
+/*
 // Code used to lower the brightness of the indicator LEDs (Snowflake LEDs)
 #if defined(RGB_MATRIX_ENABLE)
 
@@ -127,3 +128,4 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
 }
 
 #endif
+*/
