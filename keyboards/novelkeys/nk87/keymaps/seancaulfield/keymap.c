@@ -14,7 +14,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 #include QMK_KEYBOARD_H
 #include "quantum.h"
 #include "os_detection.h"
@@ -55,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     BL_TOGG, EF_INC,  BR_INC,  H1_INC,  S1_INC,  ES_INC,  H2_INC,  S2_INC,  _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, EF_DEC,  BR_DEC,  H1_DEC,  S2_DEC,  ES_DEC,  H2_INC,  S2_DEC,  _______, _______, _______, _______,          _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,           _______,                  KC_VOLU,
-    _______, _______, _______,                   _______,                                              _______, _______, _______, _______, KC_VOLD, _______),
+    _______, _______, _______,                   _______,                                              _______, _______, _______, KC_MPRV, KC_VOLD, KC_MNXT),
 
 [_FN_MACOS] = LAYOUT_tkl_f13_ansi_tsangan( /* Function layer for MacOS/iOS */
     QK_BOOT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
@@ -63,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     BL_TOGG, EF_INC,  BR_INC,  H1_INC,  S1_INC,  ES_INC,  H2_INC,  S2_INC,  _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, EF_DEC,  BR_DEC,  H1_DEC,  S2_DEC,  ES_DEC,  H2_INC,  S2_DEC,  _______, _______, _______, _______,          _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,           _______,                  KC_VOLU,
-    _______, _______, _______,                   _______,                                              _______, _______, _______, _______, KC_VOLD, _______),
+    _______, _______, _______,                   _______,                                              _______, _______, _______, KC_MPRV, KC_VOLD, KC_MNXT),
 
 };
 
@@ -83,7 +82,7 @@ bool process_detected_host_os_kb(os_variant_t detected_os) {
             layer_move(_BASE_LINUX);
             break;
     }
-    
+
     return true;
 }
 
