@@ -29,7 +29,7 @@ enum {
 };
 
 #define FNLINUX MO(_FN_LINUX)
-#define FNMACOS MO(_FN_LINUX)
+#define FNMACOS MO(_FN_MACOS)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
