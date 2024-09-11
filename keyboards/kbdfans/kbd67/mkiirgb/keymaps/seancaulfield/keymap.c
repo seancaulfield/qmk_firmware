@@ -1,18 +1,66 @@
 #include QMK_KEYBOARD_H
-#define _LAYER0 0
-#define _LAYER1 1
-#define RGB_RMOD RGB_RMD
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-        [_LAYER0] = LAYOUT_65_ansi_blocker( /* Base */
-            QK_GESC, KC_1,     KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,  KC_8,      KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,  KC_HOME,
-            KC_TAB,  KC_Q,     KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,  KC_I,      KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,  KC_PGUP,
-            KC_CAPS, KC_A,     KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,  KC_K,      KC_L,    KC_SCLN, KC_QUOT,          KC_ENT,   KC_PGDN,
-            KC_LSFT, KC_Z,     KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,  KC_COMM,   KC_DOT,  KC_SLSH, KC_RSFT,          KC_UP,    KC_END,
-            KC_LCTL, KC_LGUI,  KC_LALT,                   KC_SPC,                             KC_RALT, MO(1),            KC_LEFT, KC_DOWN,  KC_RIGHT),
-        [_LAYER1] = LAYOUT_65_ansi_blocker( /* FN */
-            QK_BOOT, KC_F1,    KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,   KC_HOME,
-            KC_TRNS, RGB_TOG,  RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, KC_TRNS, KC_PSCR, KC_SCRL, KC_PAUS, QK_BOOT,  KC_PGUP,
-            KC_CAPS, RGB_SPI,  RGB_SPD, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          EE_CLR,   KC_PGDN,
-            KC_LSFT, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_VOLU,  KC_MUTE,
-            KC_TRNS, KC_TRNS,  KC_TRNS,                   KC_TRNS,                   KC_TRNS,          KC_TRNS, KC_MPRV,          KC_VOLD,  KC_MNXT),
+#include "quantum.h"
+#include "os_detection.h"
+
+enum {
+  _BASE_LINUX,
+  _BASE_MACOS,
+  _FN_LINUX,
+  _FN_MACOS,
 };
+
+#define FNLINUX MO(_FN_LINUX)
+#define FNMACOS MO(_FN_MACOS)
+#define RGB_RMD RGB_RMOD
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
+        [_BASE_LINUX] = LAYOUT_65_ansi_blocker( /* Base */
+            QK_GESC, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,  KC_8,      KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,  KC_DEL,
+            KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,  KC_I,      KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,  KC_PGUP,
+            KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,  KC_K,      KC_L,    KC_SCLN, KC_QUOT,          KC_ENT,   KC_PGDN,
+            KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,  KC_COMM,   KC_DOT,  KC_SLSH, KC_RSFT,          KC_UP,    FNLINUX,
+            KC_LCTL, KC_LGUI, KC_LALT,                   KC_SPC,                             KC_RALT, KC_RCTL,          KC_LEFT, KC_DOWN,  KC_RIGHT),
+
+        [_BASE_MACOS] = LAYOUT_65_ansi_blocker( /* Base */
+            QK_GESC, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,  KC_8,      KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,  KC_DEL,
+            KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,  KC_I,      KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,  KC_PGUP,
+            KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,  KC_K,      KC_L,    KC_SCLN, KC_QUOT,          KC_ENT,   KC_PGDN,
+            KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,  KC_COMM,   KC_DOT,  KC_SLSH, KC_RSFT,          KC_UP,    FNMACOS,
+            KC_LCTL, KC_LOPT, KC_LCMD,                   KC_SPC,                             KC_RCMD, KC_RCTL,          KC_LEFT, KC_DOWN,  KC_RIGHT),
+
+        [_FN_LINUX] = LAYOUT_65_ansi_blocker( /* FN */
+            KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,   KC_HOME,
+            RGB_TOG, RGB_MOD, RGB_VAI, RGB_HUI, RGB_SAI, RGB_SPI, _______, _______, _______, _______, KC_PSCR, KC_SCRL, KC_PAUS, QK_BOOT,  KC_PGUP,
+            _______, RGB_RMD, RGB_VAD, RGB_HUD, RGB_SAD, RGB_SPD, _______, _______, _______, _______, _______, _______,          EE_CLR,   KC_PGDN,
+            _______, _______, _______, _______, _______, QK_BOOT, _______, _______, _______, _______, _______, _______,          KC_VOLU,  KC_MUTE,
+            _______, _______, _______,                   _______,                   _______,          _______, KC_MPRV,          KC_VOLD,  KC_MNXT),
+
+        [_FN_MACOS] = LAYOUT_65_ansi_blocker( /* FN */
+            KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,   KC_HOME,
+            RGB_TOG, RGB_MOD, RGB_VAI, RGB_HUI, RGB_SAI, RGB_SPI, _______, _______, _______, _______, KC_PSCR, KC_SCRL, KC_PAUS, QK_BOOT,  KC_PGUP,
+            _______, RGB_RMD, RGB_VAD, RGB_HUD, RGB_SAD, RGB_SPD, _______, _______, _______, _______, _______, _______,          EE_CLR,   KC_PGDN,
+            _______, _______, _______, _______, _______, QK_BOOT, _______, _______, _______, _______, _______, _______,          KC_VOLU,  KC_MUTE,
+            _______, _______, _______,                   _______,                   _______,          _______, KC_MPRV,          KC_VOLD,  KC_MNXT),
+
+};
+
+bool process_detected_host_os_kb(os_variant_t detected_os) {
+    if (!process_detected_host_os_user(detected_os)) {
+        return false;
+    }
+    switch (detected_os) {
+        case OS_MACOS:
+        case OS_IOS:
+            layer_move(_BASE_MACOS);
+            break;
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+        default:
+            layer_move(_BASE_LINUX);
+            break;
+    }
+
+    return true;
+}
