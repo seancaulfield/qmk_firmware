@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "os_detection.h"
 
 enum tapdance_keycodes {
     TD_KEY_1,
@@ -44,6 +45,31 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_KEY_1] = ACTION_TAP_DANCE_FN(dance_key_one),
     [TD_KEY_2] = ACTION_TAP_DANCE_FN(dance_key_two),
 };
+
+bool process_detected_host_os_kb(os_variant_t detected_os) {
+    if (!process_detected_host_os_user(detected_os)) {
+        return false;
+    }
+    switch (detected_os) {
+        case OS_MACOS:
+        case OS_IOS:
+            set_unicode_input_mode(UNICODE_MODE_MACOS);
+            break;
+        case OS_LINUX:
+            set_unicode_input_mode(UNICODE_MODE_LINUX);
+            break;
+        case OS_WINDOWS:
+            set_unicode_input_mode(UNICODE_MODE_WINDOWS);
+            break;
+        case OS_UNSURE:
+        default:
+            // i do what i want
+            set_unicode_input_mode(UNICODE_MODE_LINUX);
+            break;
+    }
+
+    return true;
+}
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(

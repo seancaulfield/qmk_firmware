@@ -1,3 +1,4 @@
 UNICODE_ENABLE = yes	# Unicode
 TAP_DANCE_ENABLE = yes	# Tap Dance
+OS_DETECTION_ENABLE = yes
 CONVERT_TO=kb2040
