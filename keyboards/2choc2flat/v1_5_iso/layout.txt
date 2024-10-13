@@ -1,0 +1,20 @@
+col14  0
+col13  1
+col12  2
+col11  3             29 col0
+col10  4             28 col1
+col9   5             27 col2
+col8   6             26 col3
+col7   7    1 1 1 1  15 col4
+col6   8  9 0 1 2 3  14 col5
+          r r r r r
+          o o o o o
+          w w w w w
+          4 3 2 1 0
+
+
+
+
+
+
+
