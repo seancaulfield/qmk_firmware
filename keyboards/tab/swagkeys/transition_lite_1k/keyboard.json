@@ -14,7 +14,7 @@
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
-        "rgblight": true
+        "rgb_matrix": true
     },
     "matrix_pins": {
         "cols": ["B7", "B6", "B5", "B4", "B3", "A15", "B1", "B0", "A7", "A6", "A5", "A4", "A3", "B14", "A1", "A0"],
@@ -76,8 +76,8 @@
         },
         "default": {
             "on": true,
-            "animation": "gradient_left_right",
-            "val": 255,
+            "animation": "cycle_left_right",
+            "val": 120,
             "speed": 32
         },
         "driver": "ws2812",
