@@ -14,6 +14,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "quantum.h"
+#include "ws2812.h"
+
+void init_rgblight_custom(void);
+void set_color_custom(int index, uint8_t r, uint8_t g, uint8_t b);
+void set_color_all_custom(uint8_t r, uint8_t g, uint8_t b);
+void flush_rgblight_custom(void);
+
+const rgblight_driver_t rgblight_driver = {
+  .init          = init_rgblight_custom,
+  .set_color     = set_color_custom,
+  .set_color_all = set_color_all_custom,
+  .flush         = flush_rgblight_custom,
+};
 
 /**************************** Matrix *********************************/
 // 矩阵初始化之前执行
@@ -55,3 +68,16 @@ bool rgb_matrix_indicators_kb(void) {
     return false;
 }
 #endif
+
+void init_rgblight_custom(void) {
+}
+
+void set_color_custom(int index, uint8_t r, uint8_t g, uint8_t b) {
+}
+
+void set_color_all_custom(uint8_t r, uint8_t g, uint8_t b) {
+}
+
+void flush_rgblight_custom(void) {
+}
+
