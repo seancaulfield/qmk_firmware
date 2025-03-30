@@ -78,7 +78,7 @@
         "default": {
             "on": true,
             "animation": "cycle_left_right",
-            "val": 120,
+            "val": 96,
             "speed": 32
         },
         "driver": "ws2812",
@@ -176,7 +176,7 @@
             {"matrix": [5, 1], "x": 22, "y": 64, "flags": 4},
             {"matrix": [5, 0], "x": 6, "y": 64, "flags": 4}
         ],
-        "max_brightness": 240,
+        "max_brightness": 128,
         "sleep": true
     },
     "rgblight": {
@@ -194,11 +194,11 @@
         },
         "default": {
             "animation": "rainbow_swirl",
-            "val": 160
+            "val": 96
         },
         "driver": "custom",
         "led_count": 26,
-        "max_brightness": 240,
+        "max_brightness": 128,
         "sleep": true
     },
     "url": "https://swagkeys.com/",
