@@ -58,10 +58,12 @@
             "solid_multisplash": true
         },
         "default": {
-            "val": 60
+            "val": 60,
+            "animation": "cycle_left_right"
         },
         "driver": "ws2812",
-        "sleep": true
+        "sleep": true,
+        "max_brightness": 160
     },
     "features": {
         "bootmagic": true,
