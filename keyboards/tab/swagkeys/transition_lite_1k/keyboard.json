@@ -303,7 +303,7 @@
                 {"label": "\u2192", "matrix": [5, 15], "x": 18.25, "y": 5.25}
             ]
         },
-        "LAYOUT_tkl_ansi_tsagan": {
+        "LAYOUT_tkl_ansi_tsangan": {
             "layout": [
                 {"label": "Esc", "matrix": [0, 0], "x": 0, "y": 0},
                 {"label": "F1", "matrix": [0, 1], "x": 2, "y": 0},
