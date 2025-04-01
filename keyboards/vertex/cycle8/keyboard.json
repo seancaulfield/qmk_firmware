@@ -16,7 +16,7 @@
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
-        "rgblight": true
+        "rgblight": false
     },
     "rgblight": {
         "led_count": 7,
@@ -28,9 +28,13 @@
             "knight": true,
             "christmas": true,
             "static_gradient": true,
-            "rgb_test": true,
+            "rgb_test": false,
             "alternating": true,
             "twinkle": true
+        },
+        "default": {
+            "animation": "rainbow_mood",
+            "val": 96
         }
     },
     "ws2812": {
@@ -52,7 +56,7 @@
         "tkl_ansi",
         "tkl_ansi_split_bs_rshift",
         "tkl_iso",
-        "tkl_iso_split_bs_rshift",
+        "tkl_iso_split_bs_rshift"
     ],
     "layouts":{
         "LAYOUT_all": {
