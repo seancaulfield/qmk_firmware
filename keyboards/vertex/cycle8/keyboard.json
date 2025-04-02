@@ -3,10 +3,13 @@
     "manufacturer": "vertex",
     "url": "",
     "maintainer": "Eason",
+    "build": {
+        "lto": true
+    },
     "usb": {
         "vid": "0x8A94",
         "pid": "0x8F70",
-        "device_version": "0.0.1",
+        "device_version": "0.0.3",
         "force_nkro": true
     },
     "features": {
@@ -16,7 +19,7 @@
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
-        "rgblight": false
+        "rgblight": true
     },
     "rgblight": {
         "led_count": 7,
@@ -33,8 +36,9 @@
             "twinkle": true
         },
         "default": {
-            "animation": "rainbow_mood",
-            "val": 96
+            "animation": "breathing",
+            "val": 32,
+            "speed": 8
         }
     },
     "ws2812": {
