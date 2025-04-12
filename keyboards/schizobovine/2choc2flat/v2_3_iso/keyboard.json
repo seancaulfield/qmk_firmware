@@ -11,7 +11,8 @@
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
-        "rgb_matrix": true
+        "rgb_matrix": true,
+        "os_detection": true
     },
     "matrix_pins": {
         "cols": ["GP29", "GP28", "GP27", "GP26", "GP15", "GP14", "GP13"],
