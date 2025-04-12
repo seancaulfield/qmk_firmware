@@ -56,6 +56,10 @@
             "solid_multisplash": true
         },
         "driver": "ws2812",
+        "default": {
+            "val": 60,
+            "animation": "cycle_left_right"
+        },
         "max_brightness": 150
     },
     "matrix_pins": {
