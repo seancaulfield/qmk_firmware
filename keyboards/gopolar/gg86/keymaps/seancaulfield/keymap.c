@@ -114,14 +114,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
         oled_write_P(led_usb_state.caps_lock ? PSTR("CAPLK ") : PSTR("----- "), false);
         oled_write_P(PSTR(" GOPOLAR "), false);
-        oled_write_P(led_usb_state.scroll_lock ? PSTR(" SCRLK") : PSTR(" -----"), false);
+        //oled_write_P(led_usb_state.scroll_lock ? PSTR(" SCRLK") : PSTR(" -----"), false);
+        oled_write_P(PSTR(" moooo"), false);
 
         // sleep if it has been long enough since we last got a char
-        if (timer_elapsed32(wave_sleep) > OLED_TIMEOUT) {
-            oled_off();
-        } else {
-            oled_on();
-        }
+        //if (timer_elapsed32(wave_sleep) > OLED_TIMEOUT) {
+        //    oled_off();
+        //} else {
+        //    oled_on();
+        //}
         // time for the next frame?
         if (timer_elapsed(wave_timer) > FRAME_TIMEOUT) {
             wave_timer = timer_read();
@@ -136,3 +137,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         return true;
     }
 #endif
+
+bool rgb_matrix_indicators_user(void) {
+    if (host_keyboard_led_state().caps_lock) {
+        rgb_matrix_set_color(25, 255, 255, 255);
+        //rgb_matrix_set_color(73, 255, 255, 255);
+        return false;
+    }
+    return true;
+}
