@@ -32,5 +32,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGB_INDEX_CAPS                  62  /** Caps 指示灯索引 **/
 #define RGB_INDEX_SCROLL                14  /** Scroll 指示灯索引 **/
 #define RGB_INDEX_FN                    80  /** FN   指示灯索引 **/
+#define RGB_INDEX_FN_6_25U              81  /** FN for 6.25U spacebar **/
+#define RGB_INDEX_FN_7U                 80  /** FN for 7U spacebar **/
 #endif
 

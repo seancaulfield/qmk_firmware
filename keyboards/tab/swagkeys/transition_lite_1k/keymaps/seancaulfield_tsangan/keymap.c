@@ -83,3 +83,14 @@ bool process_detected_host_os_kb(os_variant_t detected_os) {
 
     return true;
 }
+
+// Completely override higher level code b/c we're using layers differently
+bool rgb_matrix_indicators_user(void) {
+    if (layer_state_is(_FN_LINUX) || layer_state_is(_FN_MACOS)) {
+        rgb_matrix_set_color(RGB_INDEX_FN_7U, RGB_WHITE);
+    }
+    if (host_keyboard_led_state().caps_lock) {
+        rgb_matrix_set_color(RGB_INDEX_CAPS, RGB_WHITE);
+    }
+    return false;
+}
