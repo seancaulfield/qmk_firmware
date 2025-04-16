@@ -84,3 +84,11 @@ bool process_detected_host_os_kb(os_variant_t detected_os) {
 
     return true;
 }
+
+bool rgb_matrix_indicators_user(void) {
+    if (host_keyboard_led_state().caps_lock) {
+        rgb_matrix_set_color(50, 255, 255, 255);
+        return false;
+    }
+    return true;
+}
