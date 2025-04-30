@@ -4,7 +4,6 @@
     "maintainer": "Tab",
     "bootloader": "uf2boot",
     "build": {
-        "debounce_type": "sym_eager_pk",
         "lto": true
     },
     "debounce": 1,
