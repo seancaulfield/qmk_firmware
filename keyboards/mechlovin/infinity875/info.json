@@ -13,7 +13,7 @@
          "bootmagic": true,
          "extrakey": true,
          "mousekey": true
-     }
+     },
     "community_layouts": [
         "tkl_ansi",
         "tkl_ansi_split_bs_rshift",
