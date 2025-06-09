@@ -1,4 +1,7 @@
 {
+    "keyboard_name": "Infinity87.5",
+    "manufacturer": "Mechlovin.Studio",
+    "maintainer": "Mechlovin' Studio",
     "usb": {
         "pid": "0x8705",
         "device_version": "0.0.1"
