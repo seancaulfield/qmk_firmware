@@ -18,7 +18,6 @@
         "mousekey": false,
         "extrakey": true,
         "nkro": false,
-        "lto": true,
         "encoder": true
     },
     "matrix_pins": {
