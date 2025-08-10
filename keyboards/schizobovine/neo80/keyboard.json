@@ -1,6 +1,6 @@
 {
-    "manufacturer": "Qwertykeys",
-    "keyboard_name": "Neo80",
+    "manufacturer": "Neo Studio",
+    "keyboard_name": "Neo80 Wired PCB RE",
     "maintainer": "schizobovine <sean@yak.net>",
     "bootloader": "stm32-dfu",
     "diode_direction": "COL2ROW",
@@ -79,7 +79,7 @@
           "animation": "cycle_pinwheel",
           "hue": 255,
           "sat": 255,
-          "val": 255,
+          "val": 127,
           "speed": 32
         },
         "max_brightness": 255,
