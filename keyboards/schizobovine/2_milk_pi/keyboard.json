@@ -1,0 +1,58 @@
+{
+  "keyboard_name": "2% Milk",
+  "manufacturer": "Spaceman",
+  "url": "",
+  "maintainer": "Spaceman",
+  "usb": {
+    "vid": "0x5342",
+    "pid": "0x3225",
+    "device_version": "0.0.1"
+  },
+  "rgb_matrix": {
+    "animations": {
+        "cycle_all": true,
+        "cycle_left_right": true,
+        "cycle_up_down": true
+    },
+    "default": {
+      "on": true,
+      "animation": "cycle_all",
+      "val": 255,
+      "speed": 8
+    },
+    "layout": [
+        {"x":    0, "y":  0, "flags": 2},
+        {"x":  255, "y":  0, "flags": 2}
+    ],
+    "driver": "ws2812"
+  },
+  "ws2812": {
+    "driver": "vendor",
+    "pin": "GP10"
+  },
+  "processor": "RP2040",
+  "bootloader": "rp2040",
+  "features": {
+    "bootmagic": false,
+    "command": true,
+    "console": true,
+    "extrakey": true,
+    "mousekey": false,
+    "nkro": true,
+    "rgb_matrix": true
+  },
+  "matrix_pins": {
+    "direct": [
+      ["GP4"],
+      ["GP5"]
+    ]
+  },
+  "layouts": {
+    "LAYOUT": {
+      "layout": [
+        {"x": 0, "y": 0, "matrix": [0, 0]},
+        {"x": 0, "y": 1, "matrix": [1, 0]}
+      ]
+    }
+  }
+}
