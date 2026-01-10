@@ -1,0 +1,81 @@
+#!/bin/sh
+
+die() {
+    exit 1
+}
+
+qmk compile -kb 1upkeyboards/pi60 -km seancaulfield || die
+qmk compile -kb acheron/apollo/87htsc -km seancaulfield || die
+qmk compile -kb cannonkeys/bastiontkl -km seancaulfield || die
+qmk compile -kb cipulot/ec_65x -km seancaulfield_bauer_lite || die
+qmk compile -kb cipulot/ec_tkl_x -km seancaulfield_f12_iso_tsangan || die
+qmk compile -kb cipulot/ec_tkl_x -km seancaulfield_f13_iso_tsangan || die
+qmk compile -kb drop/cstm80 -km seancaulfield || die
+qmk compile -kb drop/ctrl/v2 -km seancaulfield || die
+qmk compile -kb dztech/dz60v2 -km seancaulfield || die
+qmk compile -kb dztech/tofu/jr -km seancaulfield || die
+qmk compile -kb fancytech/fancyalice66 -km seancaulfield || die
+qmk compile -kb fjlabs/mk61rgbansi -km seancaulfield || die
+qmk compile -kb gh60/revc -km seancaulfield || die
+qmk compile -kb gopolar/gg86 -km seancaulfield || die
+qmk compile -kb hineybush/h60 -km seancaulfield || die
+qmk compile -kb hineybush/h60 -km seancaulfieldtsangan || die
+qmk compile -kb hineybush/h87a -km seancaulfield || die
+qmk compile -kb hineybush/h87a -km seancaulfield_tsangan || die
+qmk compile -kb hineybush/h88 -km seancaulfield || die
+qmk compile -kb hineybush/h88 -km seancaulfield_tsangan || die
+qmk compile -kb ibm/model_m/modelh -km seancaulfield || die
+qmk compile -kb kbdcraft/adam64 -km seancaulfield || die
+qmk compile -kb kbdfans/kbd67/mkiirgb -km seancaulfield || die
+qmk compile -kb kbdfans/kbd67/rev2 -km seancaulfield || die
+qmk compile -kb kbdfans/tiger80 -km seancaulfield || die
+qmk compile -kb keebio/convolution -km seancaulfield || die
+qmk compile -kb keebio/wtf60 -km seancaulfield || die
+qmk compile -kb keebsforall/freebirdtkl -km seancaulfield || die
+qmk compile -kb keychron/q3/ansi -km seancaulfield || die
+qmk compile -kb keychron/v3/ansi -km seancaulfield || die
+qmk compile -kb kprepublic/bm16a/v2 -km seancaulfield || die
+qmk compile -kb kprepublic/bm60hsrgb_poker/rev2 -km seancaulfield || die
+qmk compile -kb kprepublic/bm68hsrgb/rev2 -km seancaulfield || die
+qmk compile -kb kprepublic/bm80v2 -km seancaulfield || die
+qmk compile -kb kprepublic/jj40 -km seancaulfield || die
+qmk compile -kb kprepublic/jj50 -km seancaulfield || die
+#need to find out what happened to the CTRLv1 firmware
+#qmk compile -kb massdrop/ctrl -km seancaulfield || die
+qmk compile -kb mechlovin/infinity87/rev3/standard -km seancaulfield || die
+qmk compile -kb mechlovin/infinity875/rev2 -km seancaulfield || die
+qmk compile -kb mechlovin/infinity875/rev2 -km seancaulfield_f13 || die
+qmk compile -kb mechlovin/infinity875/rev2 -km seancaulfield_tsangan_f12 || die
+qmk compile -kb mechlovin/infinity875/rev2 -km seancaulfield_wkl || die
+qmk compile -kb mechlovin/zed65/rev1 -km seancaulfield || die
+qmk compile -kb monsgeek/m3 -km seancaulfield || die
+qmk compile -kb monsgeek/m6 -km seancaulfield || die
+qmk compile -kb novelkeys/nk87 -km seancaulfield || die
+qmk compile -kb novelkeys/nk_classic_tkl -km seancaulfield || die
+qmk compile -kb pikatea/long_boi/long_boi_v3 -km seancaulfield || die
+qmk compile -kb schizobovine/2choc2flat/v1_0 -km seancaulfield || die
+qmk compile -kb schizobovine/2choc2flat/v1_2_iso -km seancaulfield || die
+qmk compile -kb schizobovine/2choc2flat/v1_5_ansi -km seancaulfield || die
+qmk compile -kb schizobovine/2choc2flat/v1_5_iso -km seancaulfield || die
+qmk compile -kb schizobovine/2choc2flat/v2_3_iso -km seancaulfield || die
+qmk compile -kb schizobovine/marge65 -km seancaulfield || die
+qmk compile -kb schizobovine/neo80 -km seancaulfield || die
+qmk compile -kb schizobovine/neo80 -km seancaulfield_tsangan || die
+qmk compile -kb skyloong/gk61/pro_48 -km seancaulfield || die
+qmk compile -kb studiokestra/galatea/rev1 -km seancaulfield || die
+qmk compile -kb tab/swagkeys/transition_lite_1k -km seancaulfield || die
+qmk compile -kb tab/swagkeys/transition_lite_1k -km seancaulfield_tsangan || die
+qmk compile -kb vertex/cycle8 -km seancaulfield || die
+qmk compile -kb wilba_tech/wt65_h2 -km seancaulfield || die
+qmk compile -kb xiudi/xd60/rev2 -km seancaulfield || die
+qmk compile -kb xiudi/xd75 -km seancaulfield || die
+qmk compile -kb ymdk/id75 -km seancaulfield || die
+qmk compile -kb ymdk/id75 -km seancaulfield2 || die
+qmk compile -kb ymdk/id75 -km seancaulfield3 || die
+qmk compile -kb ymdk/melody96 -km seancaulfield || die
+qmk compile -kb ymdk/yd60mq -km seancaulfield || die
+qmk compile -kb ymdk/yd60mq -km seancaulfield_hhkb || die
+qmk compile -kb ymdk/yd60mq -km seancaulfield_iso_2u_lshift || die
+qmk compile -kb ymdk/ymd75/rev3 -km seancaulfield || die
+qmk compile -kb zykrah/fuyu -km seancaulfield || die
+qmk compile -kb zykrah/fuyu_hs -km seancaulfield || die
