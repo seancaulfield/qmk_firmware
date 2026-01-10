@@ -12,7 +12,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include QMK_KEYBOARD_H
 
-#define RGB_RMD RGB_RMOD
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_65xt(
@@ -25,8 +25,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [1] = LAYOUT_65xt(
     KC_F11,  KC_F16,  QK_BOOT, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, _______, QK_BOOT,
-    KC_F12,  KC_F17,  RGB_TOG, RGB_MOD, RGB_VAI, RGB_HUI, RGB_SAI, RGB_SPI, _______, _______, _______, _______, _______, _______, _______,     _______,      _______,
-    KC_F13,  KC_F18,  _______, RGB_RMD, RGB_VAD, RGB_HUD, RGB_SAD, RGB_SPD, _______, _______, _______, _______, _______, _______,          _______,          _______,
+    KC_F12,  KC_F17,  RM_TOGG, RM_NEXT, RM_VALU, RM_HUEU, RM_SATU, RM_SPDU, _______, _______, _______, _______, _______, _______, _______,     _______,      _______,
+    KC_F13,  KC_F18,  _______, RM_PREV, RM_VALD, RM_HUED, RM_SATD, RM_SPDD, _______, _______, _______, _______, _______, _______,          _______,          _______,
     KC_F14,  KC_F19,  _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______,      _______, _______,
     KC_F15,  KC_F20,  _______, _______, _______,                   _______, _______, _______,                   _______, _______, _______, _______, _______, _______
   ),

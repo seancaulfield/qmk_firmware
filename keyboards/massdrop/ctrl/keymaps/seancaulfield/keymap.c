@@ -11,7 +11,7 @@ enum {
 
 #define FNLINUX MO(_FN_LINUX)
 #define FNMACOS MO(_FN_LINUX)
-#define RGB_MDR RGB_RMOD
+
 
 #define MODS_SHIFT  (get_mods() & MOD_MASK_SHIFT)
 #define MODS_CTRL   (get_mods() & MOD_MASK_CTRL)
@@ -41,8 +41,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FN_LINUX] = LAYOUT(
         QK_BOOT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,            KC_MUTE, KC_MPLY, KC_MSTP,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______,
-        RGB_TOG, RGB_MOD, RGB_VAI, RGB_HUI, RGB_SAI, RGB_SPI, _______, U_T_AUTO,U_T_AGCR,_______, _______, _______, _______, _______,   _______, _______, _______,
-        _______, RGB_MDR, RGB_VAD, RGB_HUD, RGB_SAD, RGB_SPD, _______, _______, _______, _______, _______, _______, _______,
+        RM_TOGG, RM_NEXT, RM_VALU, RM_HUEU, RM_SATU, RM_SPDU, _______, U_T_AUTO,U_T_AGCR,_______, _______, _______, _______, _______,   _______, _______, _______,
+        _______, RGB_MDR, RM_VALD, RM_HUED, RM_SATD, RM_SPDD, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, MD_BOOT, _______, _______, _______, _______, _______, _______,                              KC_VOLU,
         _______, _______, _______,                   _______,                            _______, _______, _______, _______,            KC_MPRV, KC_VOLD, KC_MNXT
     ),
@@ -59,8 +59,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FN_MACOS] = LAYOUT(
         QK_BOOT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,            KC_MUTE, KC_MPLY, KC_MSTP,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______,
-        RGB_TOG, RGB_MOD, RGB_VAI, RGB_HUI, RGB_SAI, RGB_SPI, _______, U_T_AUTO,U_T_AGCR,_______, _______, _______, _______, _______,   _______, _______, _______,
-        _______, RGB_MDR, RGB_VAD, RGB_HUD, RGB_SAD, RGB_SPD, _______, _______, _______, _______, _______, _______, _______,
+        RM_TOGG, RM_NEXT, RM_VALU, RM_HUEU, RM_SATU, RM_SPDU, _______, U_T_AUTO,U_T_AGCR,_______, _______, _______, _______, _______,   _______, _______, _______,
+        _______, RGB_MDR, RM_VALD, RM_HUED, RM_SATD, RM_SPDD, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, MD_BOOT, _______, _______, _______, _______, _______, _______,                              KC_VOLU,
         _______, _______, _______,                   _______,                            _______, _______, _______, _______,            KC_MPRV, KC_VOLD, KC_MNXT
     ),
@@ -110,7 +110,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
             return false;
-        case RGB_TOG:
+        case RM_TOGG:
             if (record->event.pressed) {
               switch (rgb_matrix_get_flags()) {
                 case LED_FLAG_ALL: {
