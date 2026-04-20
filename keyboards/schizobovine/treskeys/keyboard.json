@@ -1,0 +1,61 @@
+{
+  "keyboard_name": "TresKeys",
+  "manufacturer": "schizobovine",
+  "url": "https://github.com/seancaulfield/TresKeys",
+  "maintainer": "Sean Caulfield <sean@yak.net>",
+  "usb": {
+    "vid": "0xF00F",
+    "pid": "0xBABA",
+    "device_version": "1.0.0"
+  },
+  "rgb_matrix": {
+    "animations": {
+        "cycle_all": true,
+        "cycle_left_right": true,
+        "cycle_up_down": true
+    },
+    "default": {
+      "on": true,
+      "animation": "cycle_all",
+      "val": 255,
+      "speed": 8
+    },
+    "layout": [
+        {"x":   16, "y":  0, "flags": 2},
+        {"x":  128, "y":  0, "flags": 2},
+        {"x":  240, "y":  0, "flags": 2}
+    ],
+    "driver": "ws2812"
+  },
+  "ws2812": {
+    "driver": "bitbang",
+    "pin": "B6"
+  },
+  "processor": "atmega32u4",
+  "bootloader": "atmel-dfu",
+  "features": {
+    "bootmagic": false,
+    "command": true,
+    "console": true,
+    "extrakey": true,
+    "mousekey": false,
+    "nkro": true,
+    "rgb_matrix": true
+  },
+  "matrix_pins": {
+    "direct": [
+      ["D3"],
+      ["D2"],
+      ["D1"]
+    ]
+  },
+  "layouts": {
+    "LAYOUT": {
+      "layout": [
+        {"x": 0, "y": 0, "matrix": [0, 0]},
+        {"x": 1, "y": 0, "matrix": [1, 0]},
+        {"x": 2, "y": 0, "matrix": [2, 0]}
+      ]
+    }
+  }
+}
